@@ -1,0 +1,267 @@
+\contentsline {section}{\numberline {1}Introduction}{7}{section.1}
+\contentsline {section}{\numberline {2}Code Page}{7}{section.2}
+\contentsline {section}{\numberline {3}Execution}{7}{section.3}
+\contentsline {section}{\numberline {4}Types}{7}{section.4}
+\contentsline {subsection}{\numberline {4.1}Numbers}{7}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Mathematical Objects}{8}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Computer Science Objects}{8}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Games}{8}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Miscellaneous}{8}{subsection.4.5}
+\contentsline {section}{\numberline {5}Operators}{8}{section.5}
+\contentsline {subsection}{\numberline {5.1}Null}{9}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Top}{9}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Plus Minus}{9}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Degrees}{9}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}Not}{9}{subsection.5.5}
+\contentsline {subsection}{\numberline {5.6}Cent}{9}{subsection.5.6}
+\contentsline {subsection}{\numberline {5.7}Pound}{9}{subsection.5.7}
+\contentsline {subsection}{\numberline {5.8}Graph}{9}{subsection.5.8}
+\contentsline {subsection}{\numberline {5.9}Split}{9}{subsection.5.9}
+\contentsline {subsection}{\numberline {5.10}Slit}{9}{subsection.5.10}
+\contentsline {subsection}{\numberline {5.11}Drop}{10}{subsection.5.11}
+\contentsline {subsection}{\numberline {5.12}Shift Left}{10}{subsection.5.12}
+\contentsline {subsection}{\numberline {5.13}Shift Right}{10}{subsection.5.13}
+\contentsline {subsection}{\numberline {5.14}Convolve}{10}{subsection.5.14}
+\contentsline {subsection}{\numberline {5.15}Bet}{10}{subsection.5.15}
+\contentsline {subsection}{\numberline {5.16}Spade}{10}{subsection.5.16}
+\contentsline {subsection}{\numberline {5.17}Bump}{10}{subsection.5.17}
+\contentsline {subsection}{\numberline {5.18}Enter}{10}{subsection.5.18}
+\contentsline {subsection}{\numberline {5.19}Sharp S}{10}{subsection.5.19}
+\contentsline {subsection}{\numberline {5.20}Win}{10}{subsection.5.20}
+\contentsline {subsection}{\numberline {5.21}Yogh}{11}{subsection.5.21}
+\contentsline {subsection}{\numberline {5.22}Not End}{11}{subsection.5.22}
+\contentsline {subsection}{\numberline {5.23}Mu}{11}{subsection.5.23}
+\contentsline {subsection}{\numberline {5.24}Reciprocal}{11}{subsection.5.24}
+\contentsline {subsection}{\numberline {5.25}Back}{11}{subsection.5.25}
+\contentsline {subsection}{\numberline {5.26}Forward}{11}{subsection.5.26}
+\contentsline {subsection}{\numberline {5.27}Back and Forth}{11}{subsection.5.27}
+\contentsline {subsection}{\numberline {5.28}Irony}{11}{subsection.5.28}
+\contentsline {subsection}{\numberline {5.29}Die}{11}{subsection.5.29}
+\contentsline {subsection}{\numberline {5.30}Flat}{11}{subsection.5.30}
+\contentsline {subsection}{\numberline {5.31}Sharp}{12}{subsection.5.31}
+\contentsline {subsection}{\numberline {5.32}Through}{12}{subsection.5.32}
+\contentsline {subsection}{\numberline {5.33}Space}{12}{subsection.5.33}
+\contentsline {subsection}{\numberline {5.34}Bang}{12}{subsection.5.34}
+\contentsline {subsection}{\numberline {5.35}Quote}{12}{subsection.5.35}
+\contentsline {subsection}{\numberline {5.36}Number}{12}{subsection.5.36}
+\contentsline {subsection}{\numberline {5.37}Money}{12}{subsection.5.37}
+\contentsline {subsection}{\numberline {5.38}Percent}{12}{subsection.5.38}
+\contentsline {subsection}{\numberline {5.39}And}{12}{subsection.5.39}
+\contentsline {subsection}{\numberline {5.40}Apostrophe}{12}{subsection.5.40}
+\contentsline {subsection}{\numberline {5.41}Open}{13}{subsection.5.41}
+\contentsline {subsection}{\numberline {5.42}Close}{13}{subsection.5.42}
+\contentsline {subsection}{\numberline {5.43}Star}{13}{subsection.5.43}
+\contentsline {subsection}{\numberline {5.44}Plus}{13}{subsection.5.44}
+\contentsline {subsection}{\numberline {5.45}Comma}{13}{subsection.5.45}
+\contentsline {subsection}{\numberline {5.46}Minus}{13}{subsection.5.46}
+\contentsline {subsection}{\numberline {5.47}Dot}{13}{subsection.5.47}
+\contentsline {subsection}{\numberline {5.48}Slash}{13}{subsection.5.48}
+\contentsline {subsection}{\numberline {5.49}Zero}{13}{subsection.5.49}
+\contentsline {subsection}{\numberline {5.50}One}{13}{subsection.5.50}
+\contentsline {subsection}{\numberline {5.51}Two}{14}{subsection.5.51}
+\contentsline {subsection}{\numberline {5.52}Three}{14}{subsection.5.52}
+\contentsline {subsection}{\numberline {5.53}Four}{14}{subsection.5.53}
+\contentsline {subsection}{\numberline {5.54}Five}{14}{subsection.5.54}
+\contentsline {subsection}{\numberline {5.55}Six}{14}{subsection.5.55}
+\contentsline {subsection}{\numberline {5.56}Seven}{14}{subsection.5.56}
+\contentsline {subsection}{\numberline {5.57}Eight}{14}{subsection.5.57}
+\contentsline {subsection}{\numberline {5.58}Nine}{14}{subsection.5.58}
+\contentsline {subsection}{\numberline {5.59}Colon}{14}{subsection.5.59}
+\contentsline {subsection}{\numberline {5.60}Semi-colon}{14}{subsection.5.60}
+\contentsline {subsection}{\numberline {5.61}Less}{15}{subsection.5.61}
+\contentsline {subsection}{\numberline {5.62}Equals}{15}{subsection.5.62}
+\contentsline {subsection}{\numberline {5.63}Greater}{15}{subsection.5.63}
+\contentsline {subsection}{\numberline {5.64}Query}{15}{subsection.5.64}
+\contentsline {subsection}{\numberline {5.65}At}{15}{subsection.5.65}
+\contentsline {subsection}{\numberline {5.66}A}{15}{subsection.5.66}
+\contentsline {subsection}{\numberline {5.67}B}{15}{subsection.5.67}
+\contentsline {subsection}{\numberline {5.68}C}{15}{subsection.5.68}
+\contentsline {subsection}{\numberline {5.69}D}{15}{subsection.5.69}
+\contentsline {subsection}{\numberline {5.70}E}{15}{subsection.5.70}
+\contentsline {subsection}{\numberline {5.71}F}{16}{subsection.5.71}
+\contentsline {subsection}{\numberline {5.72}G}{16}{subsection.5.72}
+\contentsline {subsection}{\numberline {5.73}H}{16}{subsection.5.73}
+\contentsline {subsection}{\numberline {5.74}I}{16}{subsection.5.74}
+\contentsline {subsection}{\numberline {5.75}J}{16}{subsection.5.75}
+\contentsline {subsection}{\numberline {5.76}K}{16}{subsection.5.76}
+\contentsline {subsection}{\numberline {5.77}L}{16}{subsection.5.77}
+\contentsline {subsection}{\numberline {5.78}M}{16}{subsection.5.78}
+\contentsline {subsection}{\numberline {5.79}N}{16}{subsection.5.79}
+\contentsline {subsection}{\numberline {5.80}O}{16}{subsection.5.80}
+\contentsline {subsection}{\numberline {5.81}P}{17}{subsection.5.81}
+\contentsline {subsection}{\numberline {5.82}Q}{17}{subsection.5.82}
+\contentsline {subsection}{\numberline {5.83}R}{17}{subsection.5.83}
+\contentsline {subsection}{\numberline {5.84}S}{17}{subsection.5.84}
+\contentsline {subsection}{\numberline {5.85}T}{17}{subsection.5.85}
+\contentsline {subsection}{\numberline {5.86}U}{17}{subsection.5.86}
+\contentsline {subsection}{\numberline {5.87}V}{17}{subsection.5.87}
+\contentsline {subsection}{\numberline {5.88}W}{17}{subsection.5.88}
+\contentsline {subsection}{\numberline {5.89}X}{17}{subsection.5.89}
+\contentsline {subsection}{\numberline {5.90}Y}{17}{subsection.5.90}
+\contentsline {subsection}{\numberline {5.91}Z}{18}{subsection.5.91}
+\contentsline {subsection}{\numberline {5.92}Start}{18}{subsection.5.92}
+\contentsline {subsection}{\numberline {5.93}Backslash}{18}{subsection.5.93}
+\contentsline {subsection}{\numberline {5.94}End}{18}{subsection.5.94}
+\contentsline {subsection}{\numberline {5.95}Up}{18}{subsection.5.95}
+\contentsline {subsection}{\numberline {5.96}Under}{18}{subsection.5.96}
+\contentsline {subsection}{\numberline {5.97}Tick}{18}{subsection.5.97}
+\contentsline {subsection}{\numberline {5.98}a}{18}{subsection.5.98}
+\contentsline {subsection}{\numberline {5.99}b}{18}{subsection.5.99}
+\contentsline {subsection}{\numberline {5.100}c}{18}{subsection.5.100}
+\contentsline {subsection}{\numberline {5.101}d}{19}{subsection.5.101}
+\contentsline {subsection}{\numberline {5.102}e}{19}{subsection.5.102}
+\contentsline {subsection}{\numberline {5.103}f}{19}{subsection.5.103}
+\contentsline {subsection}{\numberline {5.104}g}{19}{subsection.5.104}
+\contentsline {subsection}{\numberline {5.105}h}{19}{subsection.5.105}
+\contentsline {subsection}{\numberline {5.106}i}{19}{subsection.5.106}
+\contentsline {subsection}{\numberline {5.107}j}{19}{subsection.5.107}
+\contentsline {subsection}{\numberline {5.108}k}{19}{subsection.5.108}
+\contentsline {subsection}{\numberline {5.109}l}{19}{subsection.5.109}
+\contentsline {subsection}{\numberline {5.110}m}{19}{subsection.5.110}
+\contentsline {subsection}{\numberline {5.111}n}{20}{subsection.5.111}
+\contentsline {subsection}{\numberline {5.112}o}{20}{subsection.5.112}
+\contentsline {subsection}{\numberline {5.113}p}{20}{subsection.5.113}
+\contentsline {subsection}{\numberline {5.114}q}{20}{subsection.5.114}
+\contentsline {subsection}{\numberline {5.115}r}{20}{subsection.5.115}
+\contentsline {subsection}{\numberline {5.116}s}{20}{subsection.5.116}
+\contentsline {subsection}{\numberline {5.117}t}{20}{subsection.5.117}
+\contentsline {subsection}{\numberline {5.118}u}{20}{subsection.5.118}
+\contentsline {subsection}{\numberline {5.119}v}{20}{subsection.5.119}
+\contentsline {subsection}{\numberline {5.120}w}{20}{subsection.5.120}
+\contentsline {subsection}{\numberline {5.121}x}{21}{subsection.5.121}
+\contentsline {subsection}{\numberline {5.122}y}{21}{subsection.5.122}
+\contentsline {subsection}{\numberline {5.123}z}{21}{subsection.5.123}
+\contentsline {subsection}{\numberline {5.124}Begin}{21}{subsection.5.124}
+\contentsline {subsection}{\numberline {5.125}Pipe}{21}{subsection.5.125}
+\contentsline {subsection}{\numberline {5.126}End}{21}{subsection.5.126}
+\contentsline {subsection}{\numberline {5.127}Tilde}{21}{subsection.5.127}
+\contentsline {subsection}{\numberline {5.128}Divide}{21}{subsection.5.128}
+\contentsline {subsection}{\numberline {5.129}Universal}{21}{subsection.5.129}
+\contentsline {subsection}{\numberline {5.130}Existential}{21}{subsection.5.130}
+\contentsline {subsection}{\numberline {5.131}Non Existential}{22}{subsection.5.131}
+\contentsline {subsection}{\numberline {5.132}Increment}{22}{subsection.5.132}
+\contentsline {subsection}{\numberline {5.133}Decrement}{22}{subsection.5.133}
+\contentsline {subsection}{\numberline {5.134}In}{22}{subsection.5.134}
+\contentsline {subsection}{\numberline {5.135}Not In}{22}{subsection.5.135}
+\contentsline {subsection}{\numberline {5.136}Box}{22}{subsection.5.136}
+\contentsline {subsection}{\numberline {5.137}Product}{22}{subsection.5.137}
+\contentsline {subsection}{\numberline {5.138}Sum}{22}{subsection.5.138}
+\contentsline {subsection}{\numberline {5.139}Root}{22}{subsection.5.139}
+\contentsline {subsection}{\numberline {5.140}Infinity}{22}{subsection.5.140}
+\contentsline {subsection}{\numberline {5.141}Conjunction}{23}{subsection.5.141}
+\contentsline {subsection}{\numberline {5.142}Disjunction}{23}{subsection.5.142}
+\contentsline {subsection}{\numberline {5.143}Intersection}{23}{subsection.5.143}
+\contentsline {subsection}{\numberline {5.144}Union}{23}{subsection.5.144}
+\contentsline {subsection}{\numberline {5.145}Integral}{23}{subsection.5.145}
+\contentsline {subsection}{\numberline {5.146}Therefore}{23}{subsection.5.146}
+\contentsline {subsection}{\numberline {5.147}Because}{23}{subsection.5.147}
+\contentsline {subsection}{\numberline {5.148}Define}{23}{subsection.5.148}
+\contentsline {subsection}{\numberline {5.149}Not Equals}{23}{subsection.5.149}
+\contentsline {subsection}{\numberline {5.150}Exact Equals}{23}{subsection.5.150}
+\contentsline {subsection}{\numberline {5.151}Not Greater}{24}{subsection.5.151}
+\contentsline {subsection}{\numberline {5.152}Not Less}{24}{subsection.5.152}
+\contentsline {subsection}{\numberline {5.153}Make Greater}{24}{subsection.5.153}
+\contentsline {subsection}{\numberline {5.154}Make Less}{24}{subsection.5.154}
+\contentsline {subsection}{\numberline {5.155}Subset}{24}{subsection.5.155}
+\contentsline {subsection}{\numberline {5.156}Superset}{24}{subsection.5.156}
+\contentsline {subsection}{\numberline {5.157}Make Superset}{24}{subsection.5.157}
+\contentsline {subsection}{\numberline {5.158}Make Subset}{24}{subsection.5.158}
+\contentsline {subsection}{\numberline {5.159}Join}{24}{subsection.5.159}
+\contentsline {subsection}{\numberline {5.160}Proportional}{24}{subsection.5.160}
+\contentsline {subsection}{\numberline {5.161}Super Zero}{25}{subsection.5.161}
+\contentsline {subsection}{\numberline {5.162}Super One}{25}{subsection.5.162}
+\contentsline {subsection}{\numberline {5.163}Super Two}{25}{subsection.5.163}
+\contentsline {subsection}{\numberline {5.164}Super Three}{25}{subsection.5.164}
+\contentsline {subsection}{\numberline {5.165}Super Four}{25}{subsection.5.165}
+\contentsline {subsection}{\numberline {5.166}Super Five}{25}{subsection.5.166}
+\contentsline {subsection}{\numberline {5.167}Super Six}{25}{subsection.5.167}
+\contentsline {subsection}{\numberline {5.168}Super Seven}{25}{subsection.5.168}
+\contentsline {subsection}{\numberline {5.169}Super Eight}{25}{subsection.5.169}
+\contentsline {subsection}{\numberline {5.170}Super Nine}{25}{subsection.5.170}
+\contentsline {subsection}{\numberline {5.171}Super Minus}{26}{subsection.5.171}
+\contentsline {subsection}{\numberline {5.172}Left}{26}{subsection.5.172}
+\contentsline {subsection}{\numberline {5.173}Up}{26}{subsection.5.173}
+\contentsline {subsection}{\numberline {5.174}Right}{26}{subsection.5.174}
+\contentsline {subsection}{\numberline {5.175}Down}{26}{subsection.5.175}
+\contentsline {subsection}{\numberline {5.176}Loop}{26}{subsection.5.176}
+\contentsline {subsection}{\numberline {5.177}Sub 0}{26}{subsection.5.177}
+\contentsline {subsection}{\numberline {5.178}Sub 1}{26}{subsection.5.178}
+\contentsline {subsection}{\numberline {5.179}Sub 2}{26}{subsection.5.179}
+\contentsline {subsection}{\numberline {5.180}Sub 3}{26}{subsection.5.180}
+\contentsline {subsection}{\numberline {5.181}Sub 4}{27}{subsection.5.181}
+\contentsline {subsection}{\numberline {5.182}Sub 5}{27}{subsection.5.182}
+\contentsline {subsection}{\numberline {5.183}Sub 6}{27}{subsection.5.183}
+\contentsline {subsection}{\numberline {5.184}Sub 7}{27}{subsection.5.184}
+\contentsline {subsection}{\numberline {5.185}Sub 8}{27}{subsection.5.185}
+\contentsline {subsection}{\numberline {5.186}Sub 9}{27}{subsection.5.186}
+\contentsline {subsection}{\numberline {5.187}Necessarily}{27}{subsection.5.187}
+\contentsline {subsection}{\numberline {5.188}Possibly}{27}{subsection.5.188}
+\contentsline {subsection}{\numberline {5.189}Impossibly}{27}{subsection.5.189}
+\contentsline {subsection}{\numberline {5.190}True}{27}{subsection.5.190}
+\contentsline {subsection}{\numberline {5.191}False}{28}{subsection.5.191}
+\contentsline {subsection}{\numberline {5.192}Proves}{28}{subsection.5.192}
+\contentsline {subsection}{\numberline {5.193}Half}{28}{subsection.5.193}
+\contentsline {subsection}{\numberline {5.194}Delete}{28}{subsection.5.194}
+\contentsline {subsection}{\numberline {5.195}Stop}{28}{subsection.5.195}
+\contentsline {subsection}{\numberline {5.196}Primorial}{28}{subsection.5.196}
+\contentsline {subsection}{\numberline {5.197}Dagger}{28}{subsection.5.197}
+\contentsline {subsection}{\numberline {5.198}Double Dagger}{28}{subsection.5.198}
+\contentsline {subsection}{\numberline {5.199}Bullet}{28}{subsection.5.199}
+\contentsline {subsection}{\numberline {5.200}Begin Function}{28}{subsection.5.200}
+\contentsline {subsection}{\numberline {5.201}End Function}{29}{subsection.5.201}
+\contentsline {subsection}{\numberline {5.202}Begin String}{29}{subsection.5.202}
+\contentsline {subsection}{\numberline {5.203}End String}{29}{subsection.5.203}
+\contentsline {subsection}{\numberline {5.204}Flatten}{29}{subsection.5.204}
+\contentsline {subsection}{\numberline {5.205}Expand}{29}{subsection.5.205}
+\contentsline {subsection}{\numberline {5.206}Ascending}{29}{subsection.5.206}
+\contentsline {subsection}{\numberline {5.207}Descending}{29}{subsection.5.207}
+\contentsline {subsection}{\numberline {5.208}Graph}{29}{subsection.5.208}
+\contentsline {subsection}{\numberline {5.209}One}{29}{subsection.5.209}
+\contentsline {subsection}{\numberline {5.210}Two}{29}{subsection.5.210}
+\contentsline {subsection}{\numberline {5.211}Three}{30}{subsection.5.211}
+\contentsline {subsection}{\numberline {5.212}Four}{30}{subsection.5.212}
+\contentsline {subsection}{\numberline {5.213}Five}{30}{subsection.5.213}
+\contentsline {subsection}{\numberline {5.214}Six}{30}{subsection.5.214}
+\contentsline {subsection}{\numberline {5.215}Seven}{30}{subsection.5.215}
+\contentsline {subsection}{\numberline {5.216}Eight}{30}{subsection.5.216}
+\contentsline {subsection}{\numberline {5.217}Nine}{30}{subsection.5.217}
+\contentsline {subsection}{\numberline {5.218}Ten}{30}{subsection.5.218}
+\contentsline {subsection}{\numberline {5.219}Eleven}{30}{subsection.5.219}
+\contentsline {subsection}{\numberline {5.220}Twelve}{30}{subsection.5.220}
+\contentsline {subsection}{\numberline {5.221}Fifty}{31}{subsection.5.221}
+\contentsline {subsection}{\numberline {5.222}Hundred}{31}{subsection.5.222}
+\contentsline {subsection}{\numberline {5.223}Five Hundred}{31}{subsection.5.223}
+\contentsline {subsection}{\numberline {5.224}Thousand}{31}{subsection.5.224}
+\contentsline {subsection}{\numberline {5.225}Alpha}{31}{subsection.5.225}
+\contentsline {subsection}{\numberline {5.226}Beta}{31}{subsection.5.226}
+\contentsline {subsection}{\numberline {5.227}Five Thousand}{31}{subsection.5.227}
+\contentsline {subsection}{\numberline {5.228}Ten Thousand}{31}{subsection.5.228}
+\contentsline {subsection}{\numberline {5.229}Fifty Thousand}{31}{subsection.5.229}
+\contentsline {subsection}{\numberline {5.230}Hundred Thousand}{31}{subsection.5.230}
+\contentsline {subsection}{\numberline {5.231}Pop}{32}{subsection.5.231}
+\contentsline {subsection}{\numberline {5.232}Push}{32}{subsection.5.232}
+\contentsline {subsection}{\numberline {5.233}Delta}{32}{subsection.5.233}
+\contentsline {subsection}{\numberline {5.234}Gamma}{32}{subsection.5.234}
+\contentsline {subsection}{\numberline {5.235}Theta}{32}{subsection.5.235}
+\contentsline {subsection}{\numberline {5.236}Lambda}{32}{subsection.5.236}
+\contentsline {subsection}{\numberline {5.237}Xi}{32}{subsection.5.237}
+\contentsline {subsection}{\numberline {5.238}Phi}{32}{subsection.5.238}
+\contentsline {subsection}{\numberline {5.239}Psi}{32}{subsection.5.239}
+\contentsline {subsection}{\numberline {5.240}Omega}{32}{subsection.5.240}
+\contentsline {subsection}{\numberline {5.241}Complex}{33}{subsection.5.241}
+\contentsline {subsection}{\numberline {5.242}Quaternion}{33}{subsection.5.242}
+\contentsline {subsection}{\numberline {5.243}Natural}{33}{subsection.5.243}
+\contentsline {subsection}{\numberline {5.244}Prime}{33}{subsection.5.244}
+\contentsline {subsection}{\numberline {5.245}Rational}{33}{subsection.5.245}
+\contentsline {subsection}{\numberline {5.246}Real}{33}{subsection.5.246}
+\contentsline {subsection}{\numberline {5.247}Integer}{33}{subsection.5.247}
+\contentsline {subsection}{\numberline {5.248}Pi}{33}{subsection.5.248}
+\contentsline {subsection}{\numberline {5.249}Euler}{33}{subsection.5.249}
+\contentsline {subsection}{\numberline {5.250}Aleph}{33}{subsection.5.250}
+\contentsline {subsection}{\numberline {5.251}Prescribe}{34}{subsection.5.251}
+\contentsline {subsection}{\numberline {5.252}Oplus}{34}{subsection.5.252}
+\contentsline {subsection}{\numberline {5.253}Ominus}{34}{subsection.5.253}
+\contentsline {subsection}{\numberline {5.254}Otimes}{34}{subsection.5.254}
+\contentsline {subsection}{\numberline {5.255}Odivide}{34}{subsection.5.255}
+\contentsline {subsection}{\numberline {5.256}Oequals}{34}{subsection.5.256}
+\contentsline {section}{\numberline {6}Examples}{34}{section.6}

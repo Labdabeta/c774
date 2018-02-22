@@ -1,0 +1,1244 @@
+% Warning: LuaLaTeX or XeLaTeX required
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\makeatletter
+ \renewcommand*\l@subsection{\@dottedtocline{2}{1.8em}{3.2em}}
+\makeatother
+
+\usepackage{fontspec}
+\setmonofont{Unifont}
+
+\usepackage{xcolor}
+\usepackage{mathtools}
+
+\title{\u{c} Documentation}
+\author{Louis A. Burke (lburke@labprogramming.net)}
+
+\newenvironment{operator}[2]{%
+    \newcommand{\applymapto}{\ensuremath{\xmapsto{\texttt{\detokenize{#2}}}}}
+    \subsection{#1}
+    The \textit{#1} operator is represented by \colorbox{gray!30} {\texttt{\detokenize{#2}}}.
+    \begin{enumerate}}{\end{enumerate}}
+\providecommand{\op}[2]{\item\texttt{(\detokenize{#1})} $\applymapto $
+\texttt{(\detokenize{#2})}}
+
+\newenvironment{verb_operator}[2]{%
+    \newcommand{\applymapto}{\ensuremath{\xmapsto{\texttt{#2}}}}
+    \subsection{#1}
+    The \textit{#1} operator is represented by \colorbox{gray!30} {\texttt{#2}}.
+    \begin{enumerate}}{\end{enumerate}}
+\providecommand{\op}[2]{\item\texttt{(\detokenize{#1})} $\applymapto $
+\texttt{(\detokenize{#2})}}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+\clearpage
+
+\section{Introduction}
+
+\u{c} is a stack-based tacid code golf language. What sets it apart from many
+other golfing languages is that it cares deeply about the type of data being
+passed around.
+
+By 'standard' the language performs extremely differently depending on the types
+of the input. However, since there is no common standard way to input a number
+as a natural number instead of an integer, for example, we specify our input
+types at compile-time. In theory the compiler could also produce sources for
+each possible combination of inputs, but this would be costly. The point is that
+while the compiler has to specify input types, this does not count as part of
+the source, but rather a deficiency of the compiler. An ideal \u{c} environment
+would have some sort of drop-down menu next to each input and would run the
+program on exactly the input types given.
+
+For example consider the 1-byte program \verb|ℙ|. If the input is a single
+natural number, this is the primality checking program. If there is no input,
+this is instead the program which prints a list of all prime numbers.
+
+\section{Code Page}
+
+The following is the code page for \u{c}:
+
+\begin{tabular}{c c c c c c c c c c c c c c c c c}
+\verb| | & \verb|0| & \verb|1| & \verb|2| & \verb|3| & \verb|4| & \verb|5| &
+\verb|6| & \verb|7| & \verb|8| & \verb|9| & \verb|A| & \verb|B| & \verb|C| &
+\verb|D| & \verb|E| & \verb|F| \\
+\verb|0| & \verb|∅| & \verb|¡| & \verb|±| & \verb|°| & \verb|¬| & \verb|¢| &
+\verb|£| & \verb|¤| & \verb|¥| & \verb|¦| & \verb|¶| & \verb|«| & \verb|»| &
+\verb|₪| & \verb|ℶ| & \verb|♠| \\
+\verb|1| & \verb|Þ| & \verb|Ð| & \verb|ß| & \verb|Ƿ| & \verb|Ȝ| & \verb|ſ| &
+\verb|µ| & \verb|⅟| & \verb|↶| & \verb|↷| & \verb|↹| & \verb|¿| & \verb|⚅| &
+\verb|♭| & \verb|♯| & \verb|⍏| \\
+\verb|2| & \verb| | & \verb|!| & \verb|"| & \verb|#| & \verb|$| & \verb|%| &
+\verb|&| & \verb|'| & \verb|(| & \verb|)| & \verb|*| & \verb|+| & \verb|,| &
+\verb|-| & \verb|.| & \verb|/| \\
+\verb|3| & \verb|0| & \verb|1| & \verb|2| & \verb|3| & \verb|4| & \verb|5| &
+\verb|6| & \verb|7| & \verb|8| & \verb|9| & \verb|:| & \verb|;| & \verb|<| &
+\verb|=| & \verb|>| & \verb|?| \\
+\verb|4| & \verb|@| & \verb|A| & \verb|B| & \verb|C| & \verb|D| & \verb|E| &
+\verb|F| & \verb|G| & \verb|H| & \verb|I| & \verb|J| & \verb|K| & \verb|L| &
+\verb|M| & \verb|N| & \verb|O| \\
+\verb|5| & \verb|P| & \verb|Q| & \verb|R| & \verb|S| & \verb|T| & \verb|U| &
+\verb|V| & \verb|W| & \verb|X| & \verb|Y| & \verb|Z| & \verb|[| & \verb|\| &
+\verb|]| & \verb|^| & \verb|_| \\
+\verb|6| & \verb|`| & \verb|a| & \verb|b| & \verb|c| & \verb|d| & \verb|e| &
+\verb|f| & \verb|g| & \verb|h| & \verb|i| & \verb|j| & \verb|k| & \verb|l| &
+\verb|m| & \verb|n| & \verb|o| \\
+\verb|7| & \verb|p| & \verb|q| & \verb|r| & \verb|s| & \verb|t| & \verb|u| &
+\verb|v| & \verb|w| & \verb|x| & \verb|y| & \verb|z| & \verb|{| & \verb/|/ &
+\verb|}| & \verb|~| & \verb|÷| \\
+\verb|8| & \verb|∀| & \verb|∃| & \verb|∄| & \verb|∆| & \verb|∇| & \verb|∈| &
+\verb|∉| & \verb|∎| & \verb|∏| & \verb|∑| & \verb|√| & \verb|∞| & \verb|∧| &
+\verb|∨| & \verb|∩| & \verb|∪| \\
+\verb|9| & \verb|∫| & \verb|∴| & \verb|∵| & \verb|≝| & \verb|≠| & \verb|≡| &
+\verb|≤| & \verb|≥| & \verb|≰| & \verb|≱| & \verb|⊆| & \verb|⊇| & \verb|⊈| &
+\verb|⊉| & \verb|⋈| & \verb|∝| \\
+\verb|A| & \verb|⁰| & \verb|¹| & \verb|²| & \verb|³| & \verb|⁴| & \verb|⁵| &
+\verb|⁶| & \verb|⁷| & \verb|⁸| & \verb|⁹| & \verb|⁻| & \verb|←| & \verb|↑| &
+\verb|→| & \verb|↓| & \verb|↺| \\
+\verb|B| & \verb|₀| & \verb|₁| & \verb|₂| & \verb|₃| & \verb|₄| & \verb|₅| &
+\verb|₆| & \verb|₇| & \verb|₈| & \verb|₉| & \verb|□| & \verb|◇| & \verb|⟠| &
+\verb|⊤| & \verb|⊥| & \verb|⊦| \\
+\verb|C| & \verb|½| & \verb|⌫| & \verb|Ɂ| & \verb|‼| & \verb|†| & \verb|‡| &
+\verb|•| & \verb|‘| & \verb|’| & \verb|“| & \verb|”| & \verb|⋯| & \verb|⋮| &
+\verb|⋰| & \verb|⋱| & \verb|⁜| \\
+\verb|D| & \verb|Ⅰ| & \verb|Ⅱ| & \verb|Ⅲ| & \verb|Ⅳ| & \verb|Ⅴ| & \verb|Ⅵ| &
+\verb|Ⅶ| & \verb|Ⅷ| & \verb|Ⅸ| & \verb|Ⅹ| & \verb|Ⅺ| & \verb|Ⅻ| & \verb|Ⅼ| &
+\verb|Ⅽ| & \verb|Ⅾ| & \verb|Ⅿ| \\
+\verb|E| & \verb|ɑ| & \verb|β| & \verb|ↁ| & \verb|ↂ| & \verb|ↇ| & \verb|ↈ| &
+\verb|↤| & \verb|⇤| & \verb|δ| & \verb|Γ| & \verb|Θ| & \verb|Λ| & \verb|Ξ| &
+\verb|Φ| & \verb|Ψ| & \verb|Ω| \\
+\verb|F| & \verb|ℂ| & \verb|ℍ| & \verb|ℕ| & \verb|ℙ| & \verb|ℚ| & \verb|ℝ| &
+\verb|ℤ| & \verb|π| & \verb|ℯ| & \verb|א| & \verb|℞| & \verb|⊕| & \verb|⊖| &
+\verb|⊗| & \verb|⊘| & \verb|⊜| \\
+\end{tabular}
+% This cleans up vim highlighting... $
+
+\section{Execution}
+
+%TODO: maybe more tacit-style. Each function is chained and consumes/produces
+%arg(s).
+
+Execution of \u{c} occurs by first creating an implicit stack (not to be
+confused with a stack datatype) of all inputs. Then each operation in the source
+is applied to the top item of the stack from left to right. Thus you can picture
+the definition of \u{c} as a list of 256 operations on each datatype it
+supports. Many of these may consume elements of the implicit stack or else
+change the data on the stack in various ways. Manipulating the correct datatypes
+is the key to a short \u{c} program.
+
+\section{Types} % TODO: Move the operations into this section
+
+\subsection{Numbers}
+
+These are the numeric types available in \u{c}:
+\begin{enumerate}
+    \item \texttt{integer} - Integers
+    \item \texttt{number} - Real numbers
+    \item \texttt{rational} - Rational numbers
+    \item \texttt{complex} - Complex numbers
+    \item \texttt{natural} - Natural numbers
+    \item \texttt{quaternion} - Quaternion numbers
+\end{enumerate}
+
+\subsection{Mathematical Objects}
+
+These are the mathematical types available in \u{c}:
+\begin{enumerate}
+    \item \texttt{set} - Sets
+    \item \texttt{graph} - Graphs
+    \item \texttt{digraph} - Digraphs
+    \item \texttt{mgraph} - Multigraphs
+    \item \texttt{group} - Groups
+    \item \texttt{vector} - Vectors
+    \item \texttt{matrix} - Matrices
+\end{enumerate}
+
+\subsection{Computer Science Objects}
+
+These are the computer science types available in \u{c}:
+\begin{enumerate}
+    \item \texttt{stack} - Stacks
+    \item \texttt{queue} - Queues
+    \item \texttt{string} - Strings
+    \item \texttt{list} - Lists
+    \item \texttt{tuple} - Tuples
+    \item \texttt{stream} - Streams
+\end{enumerate}
+
+\subsection{Games}
+
+These are the game types available in \u{c}:
+\begin{enumerate}
+    \item \texttt{poker} - Poker cards/hands
+    \item \texttt{bridge} - Bridge cards/hands
+\end{enumerate}
+
+\subsection{Miscellaneous}
+
+These are the miscellaneous types available in \u{c}:
+\begin{enumerate}
+    \item \texttt{image} - Images
+    \item \texttt{unit} - Standard Units
+    \item \texttt{grid} - Grids of things
+\end{enumerate}
+
+\section{Operators}
+
+Each operator is defined by a list of actions it takes on a specific argument.
+The argument is specified by a tuple to tuple type specification, then a short
+description of what the operator returns.
+
+The actual argument tuple could be longer than that listed, in which case the
+function merely effects the first arguments which it needs.
+
+Each operator will go through each valid mapping it has in order to decide what
+to do. Thus precedence is encoded into these listings. Some types which
+construct literals are not listed. Instead these types are presented in ALL CAPS
+to indicate that every operator has intrinsically defined actions on those
+types.
+
+The special types \texttt{*} and \texttt{\_} indicate anything and a single
+element respectively.
+
+\begin{operator}{Null}{∅}
+    \op{}{set}: Returns the null set.
+\end{operator}
+
+\begin{operator}{Top}{¡}
+    \op{_,*}{_}: Returns the first argument.
+\end{operator}
+
+\begin{operator}{Plus Minus}{±}
+    \op{number}{{number}}: Returns a set containing both positive and negative versions of the number.
+\end{operator}
+
+\begin{operator}{Degrees}{°}
+    \op{number}{number}: Convert from degrees to radians.
+\end{operator}
+
+\begin{operator}{Not}{¬}
+    \op{_}{bool}: Logical not.
+\end{operator}
+
+\begin{operator}{Cent}{¢}
+\item.
+\end{operator}
+
+\begin{operator}{Pound}{£}
+\item.
+\end{operator}
+
+\begin{operator}{Graph}{¤}
+\item.
+\end{operator}
+
+\begin{operator}{Split}{¥}
+\item.
+\end{operator}
+
+\begin{operator}{Slit}{¦}
+\item.
+\end{operator}
+
+\begin{operator}{Drop}{¶}
+\item.
+\end{operator}
+
+\begin{operator}{Shift Left}{«}
+\item.
+\end{operator}
+
+\begin{operator}{Shift Right}{»}
+\item.
+\end{operator}
+
+\begin{operator}{Convolve}{₪}
+\item.
+\end{operator}
+
+\begin{operator}{Bet}{ℶ}
+\item.
+\end{operator}
+
+\begin{operator}{Spade}{♠}
+\item.
+\end{operator}
+
+\begin{operator}{Bump}{Þ}
+\item.
+\end{operator}
+
+\begin{operator}{Enter}{Ð}
+\item.
+\end{operator}
+
+\begin{operator}{Sharp S}{ß}
+\item.
+\end{operator}
+
+\begin{operator}{Win}{Ƿ}
+\item.
+\end{operator}
+
+\begin{operator}{Yogh}{Ȝ}
+\item.
+\end{operator}
+
+\begin{operator}{Not End}{ſ}
+\item.
+\end{operator}
+
+\begin{operator}{Mu}{µ}
+\item.
+\end{operator}
+
+\begin{operator}{Reciprocal}{⅟}
+\item.
+\end{operator}
+
+\begin{operator}{Back}{↶}
+\item.
+\end{operator}
+
+\begin{operator}{Forward}{↷}
+\item.
+\end{operator}
+
+\begin{operator}{Back and Forth}{↹}
+\item.
+\end{operator}
+
+\begin{operator}{Irony}{¿}
+\item.
+\end{operator}
+
+\begin{operator}{Die}{⚅}
+\item.
+\end{operator}
+
+\begin{operator}{Flat}{♭}
+\item.
+\end{operator}
+
+\begin{operator}{Sharp}{♯}
+\item.
+\end{operator}
+
+\begin{operator}{Through}{⍏}
+\item.
+\end{operator}
+
+\begin{operator}{Space}{ }
+\item.
+\end{operator}
+
+\begin{operator}{Bang}{!}
+\item.
+\end{operator}
+
+\begin{operator}{Quote}{"}
+\item.
+\end{operator}
+
+\begin{verb_operator}{Number}{\#}
+\item.
+\end{verb_operator}
+
+\begin{operator}{Money}{$} % To appease vim again $
+\item.
+\end{operator}
+
+\begin{verb_operator}{Percent}{\%}
+\item.
+\end{verb_operator}
+
+\begin{operator}{And}{&}
+\item.
+\end{operator}
+
+\begin{operator}{Apostrophe}{'}
+\item.
+\end{operator}
+
+\begin{operator}{Open}{(}
+\item.
+\end{operator}
+
+\begin{operator}{Close}{)}
+\item.
+\end{operator}
+
+\begin{operator}{Star}{*}
+\item.
+\end{operator}
+
+\begin{operator}{Plus}{+}
+\item.
+\end{operator}
+
+\begin{operator}{Comma}{,}
+\item.
+\end{operator}
+
+\begin{operator}{Minus}{-}
+\item.
+\end{operator}
+
+\begin{operator}{Dot}{.}
+\item.
+\end{operator}
+
+\begin{operator}{Slash}{/}
+\item.
+\end{operator}
+
+\begin{operator}{Zero}{0}
+\item.
+\end{operator}
+
+\begin{operator}{One}{1}
+\item.
+\end{operator}
+
+\begin{operator}{Two}{2}
+\item.
+\end{operator}
+
+\begin{operator}{Three}{3}
+\item.
+\end{operator}
+
+\begin{operator}{Four}{4}
+\item.
+\end{operator}
+
+\begin{operator}{Five}{5}
+\item.
+\end{operator}
+
+\begin{operator}{Six}{6}
+\item.
+\end{operator}
+
+\begin{operator}{Seven}{7}
+\item.
+\end{operator}
+
+\begin{operator}{Eight}{8}
+\item.
+\end{operator}
+
+\begin{operator}{Nine}{9}
+\item.
+\end{operator}
+
+\begin{operator}{Colon}{:}
+\item.
+\end{operator}
+
+\begin{operator}{Semi-colon}{;}
+\item.
+\end{operator}
+
+\begin{operator}{Less}{<}
+\item.
+\end{operator}
+
+\begin{operator}{Equals}{=}
+    \op{list,list}{list}: List with true wherever the elements in both lists are the same.
+    \op{number,number}{bool}: True if the two numbers are equal.
+\end{operator}
+
+\begin{operator}{Greater}{>}
+\item.
+\end{operator}
+
+\begin{operator}{Query}{?}
+\item.
+\end{operator}
+
+\begin{operator}{At}{@}
+\item.
+\end{operator}
+
+\begin{operator}{A}{A}
+\item.
+\end{operator}
+
+\begin{operator}{B}{B}
+\item.
+\end{operator}
+
+\begin{operator}{C}{C}
+\item.
+\end{operator}
+
+\begin{operator}{D}{D}
+\item.
+\end{operator}
+
+\begin{operator}{E}{E}
+\item.
+\end{operator}
+
+\begin{operator}{F}{F}
+\item.
+\end{operator}
+
+\begin{operator}{G}{G}
+\item.
+\end{operator}
+
+\begin{operator}{H}{H}
+\item.
+\end{operator}
+
+\begin{operator}{I}{I}
+\item.
+\end{operator}
+
+\begin{operator}{J}{J}
+\item.
+\end{operator}
+
+\begin{operator}{K}{K}
+\item.
+\end{operator}
+
+\begin{operator}{L}{L}
+\item.
+\end{operator}
+
+\begin{operator}{M}{M}
+\item.
+\end{operator}
+
+\begin{operator}{N}{N}
+\item.
+\end{operator}
+
+\begin{operator}{O}{O}
+\item.
+\end{operator}
+
+\begin{operator}{P}{P}
+\item.
+\end{operator}
+
+\begin{operator}{Q}{Q}
+\item.
+\end{operator}
+
+\begin{operator}{R}{R}
+\item.
+\end{operator}
+
+\begin{operator}{S}{S}
+\item.
+\end{operator}
+
+\begin{operator}{T}{T}
+\item.
+\end{operator}
+
+\begin{operator}{U}{U}
+\item.
+\end{operator}
+
+\begin{operator}{V}{V}
+\item.
+\end{operator}
+
+\begin{operator}{W}{W}
+\item.
+\end{operator}
+
+\begin{operator}{X}{X}
+\item.
+\end{operator}
+
+\begin{operator}{Y}{Y}
+\item.
+\end{operator}
+
+\begin{operator}{Z}{Z}
+\item.
+\end{operator}
+
+\begin{operator}{Start}{[}
+\item.
+\end{operator}
+
+\begin{verb_operator}{Backslash}{\textbackslash}
+\item.
+\end{verb_operator}
+
+\begin{operator}{End}{]}
+\item.
+\end{operator}
+
+\begin{verb_operator}{Up}{\^}
+\item.
+\end{verb_operator}
+
+\begin{verb_operator}{Under}{\_}
+\item.
+\end{verb_operator}
+
+\begin{operator}{Tick}{`}
+\item.
+\end{operator}
+
+\begin{operator}{a}{a}
+\item.
+\end{operator}
+
+\begin{operator}{b}{b}
+\item.
+\end{operator}
+
+\begin{operator}{c}{c}
+\item.
+\end{operator}
+
+\begin{operator}{d}{d}
+\item.
+\end{operator}
+
+\begin{operator}{e}{e}
+\item.
+\end{operator}
+
+\begin{operator}{f}{f}
+\item.
+\end{operator}
+
+\begin{operator}{g}{g}
+\item.
+\end{operator}
+
+\begin{operator}{h}{h}
+\item.
+\end{operator}
+
+\begin{operator}{i}{i}
+\item.
+\end{operator}
+
+\begin{operator}{j}{j}
+\item.
+\end{operator}
+
+\begin{operator}{k}{k}
+\item.
+\end{operator}
+
+\begin{operator}{l}{l}
+\item.
+\end{operator}
+
+\begin{operator}{m}{m}
+\item.
+\end{operator}
+
+\begin{operator}{n}{n}
+\item.
+\end{operator}
+
+\begin{operator}{o}{o}
+\item.
+\end{operator}
+
+\begin{operator}{p}{p}
+\item.
+\end{operator}
+
+\begin{operator}{q}{q}
+\item.
+\end{operator}
+
+\begin{operator}{r}{r}
+\item.
+\end{operator}
+
+\begin{operator}{s}{s}
+\item.
+\end{operator}
+
+\begin{operator}{t}{t}
+\item.
+\end{operator}
+
+\begin{operator}{u}{u}
+\item.
+\end{operator}
+
+\begin{operator}{v}{v}
+\item.
+\end{operator}
+
+\begin{operator}{w}{w}
+\item.
+\end{operator}
+
+\begin{operator}{x}{x}
+\item.
+\end{operator}
+
+\begin{operator}{y}{y}
+\item.
+\end{operator}
+
+\begin{operator}{z}{z}
+\item.
+\end{operator}
+
+\begin{verb_operator}{Begin}{\{}
+\item.
+\end{verb_operator}
+
+\begin{operator}{Pipe}{|}
+\item.
+\end{operator}
+
+\begin{verb_operator}{End}{\}}
+\item.
+\end{verb_operator}
+
+\begin{operator}{Tilde}{~}
+\item.
+\end{operator}
+
+\begin{operator}{Divide}{÷}
+\item.
+\end{operator}
+
+\begin{operator}{Universal}{∀}
+\item.
+\end{operator}
+
+\begin{operator}{Existential}{∃}
+\item.
+\end{operator}
+
+\begin{operator}{Non Existential}{∄}
+\item.
+\end{operator}
+
+\begin{operator}{Increment}{∆}
+\item.
+\end{operator}
+
+\begin{operator}{Decrement}{∇}
+\item.
+\end{operator}
+
+\begin{operator}{In}{∈}
+    \op{_,set}{_,set}: Coerces the top element to an element of the set.
+\end{operator}
+
+\begin{operator}{Not In}{∉}
+\item.
+\end{operator}
+
+\begin{operator}{Box}{∎}
+\item.
+\end{operator}
+
+\begin{operator}{Product}{∏}
+\item.
+\end{operator}
+
+\begin{operator}{Sum}{∑}
+\item.
+\end{operator}
+
+\begin{operator}{Root}{√}
+\item.
+\end{operator}
+
+\begin{operator}{Infinity}{∞}
+\item.
+\end{operator}
+
+\begin{operator}{Conjunction}{∧}
+\item.
+\end{operator}
+
+\begin{operator}{Disjunction}{∨}
+\item.
+\end{operator}
+
+\begin{operator}{Intersection}{∩}
+\item.
+\end{operator}
+
+\begin{operator}{Union}{∪}
+\item.
+\end{operator}
+
+\begin{operator}{Integral}{∫}
+\item.
+\end{operator}
+
+\begin{operator}{Therefore}{∴}
+\item.
+\end{operator}
+
+\begin{operator}{Because}{∵}
+\item.
+\end{operator}
+
+\begin{operator}{Define}{≝}
+\item.
+\end{operator}
+
+\begin{operator}{Not Equals}{≠}
+\item.
+\end{operator}
+
+\begin{operator}{Exact Equals}{≡}
+    \op{_,_}{bool}: True if the two elements on top of the stack are identical, false otherwise.
+\end{operator}
+
+\begin{operator}{Not Greater}{≤}
+\item.
+\end{operator}
+
+\begin{operator}{Not Less}{≥}
+\item.
+\end{operator}
+
+\begin{operator}{Make Greater}{≰}
+\item.
+\end{operator}
+
+\begin{operator}{Make Less}{≱}
+\item.
+\end{operator}
+
+\begin{operator}{Subset}{⊆}
+\item.
+\end{operator}
+
+\begin{operator}{Superset}{⊇}
+\item.
+\end{operator}
+
+\begin{operator}{Make Superset}{⊈}
+\item.
+\end{operator}
+
+\begin{operator}{Make Subset}{⊉}
+\item.
+\end{operator}
+
+\begin{operator}{Join}{⋈}
+\item.
+\end{operator}
+
+\begin{operator}{Proportional}{∝}
+\item.
+\end{operator}
+
+\begin{operator}{Super Zero}{⁰}
+\item.
+\end{operator}
+
+\begin{operator}{Super One}{¹}
+\item.
+\end{operator}
+
+\begin{operator}{Super Two}{²}
+\item.
+\end{operator}
+
+\begin{operator}{Super Three}{³}
+\item.
+\end{operator}
+
+\begin{operator}{Super Four}{⁴}
+\item.
+\end{operator}
+
+\begin{operator}{Super Five}{⁵}
+\item.
+\end{operator}
+
+\begin{operator}{Super Six}{⁶}
+\item.
+\end{operator}
+
+\begin{operator}{Super Seven}{⁷}
+\item.
+\end{operator}
+
+\begin{operator}{Super Eight}{⁸}
+\item.
+\end{operator}
+
+\begin{operator}{Super Nine}{⁹}
+\item.
+\end{operator}
+
+\begin{operator}{Super Minus}{⁻}
+\item.
+\end{operator}
+
+\begin{operator}{Left}{←}
+\item.
+\end{operator}
+
+\begin{operator}{Up}{↑}
+\item.
+\end{operator}
+
+\begin{operator}{Right}{→}
+\item.
+\end{operator}
+
+\begin{operator}{Down}{↓}
+\item.
+\end{operator}
+
+\begin{operator}{Loop}{↺}
+\item.
+\end{operator}
+
+\begin{operator}{Sub 0}{₀}
+\item.
+\end{operator}
+
+\begin{operator}{Sub 1}{₁}
+\item.
+\end{operator}
+
+\begin{operator}{Sub 2}{₂}
+\item.
+\end{operator}
+
+\begin{operator}{Sub 3}{₃}
+\item.
+\end{operator}
+
+\begin{operator}{Sub 4}{₄}
+\item.
+\end{operator}
+
+\begin{operator}{Sub 5}{₅}
+\item.
+\end{operator}
+
+\begin{operator}{Sub 6}{₆}
+\item.
+\end{operator}
+
+\begin{operator}{Sub 7}{₇}
+\item.
+\end{operator}
+
+\begin{operator}{Sub 8}{₈}
+\item.
+\end{operator}
+
+\begin{operator}{Sub 9}{₉}
+\item.
+\end{operator}
+
+\begin{operator}{Necessarily}{□}
+\item.
+\end{operator}
+
+\begin{operator}{Possibly}{◇}
+\item.
+\end{operator}
+
+\begin{operator}{Impossibly}{⟠}
+\item.
+\end{operator}
+
+\begin{operator}{True}{⊤}
+\item.
+\end{operator}
+
+\begin{operator}{False}{⊥}
+\item.
+\end{operator}
+
+\begin{operator}{Proves}{⊦}
+\item.
+\end{operator}
+
+\begin{operator}{Half}{½}
+\item.
+\end{operator}
+
+\begin{operator}{Delete}{⌫}
+\item.
+\end{operator}
+
+\begin{operator}{Stop}{Ɂ}
+\item.
+\end{operator}
+
+\begin{operator}{Primorial}{‼}
+\item.
+\end{operator}
+
+\begin{operator}{Dagger}{†}
+\item.
+\end{operator}
+
+\begin{operator}{Double Dagger}{‡}
+\item.
+\end{operator}
+
+\begin{operator}{Bullet}{•}
+\item.
+\end{operator}
+
+\begin{operator}{Begin Function}{‘}
+    \op{}{FUNCTION_DEFINITION}: Returns an empty function definition.
+\end{operator}
+
+\begin{operator}{End Function}{’}
+    \op{FUNCTION_DEFINITION}{function}: Compiles the definition of a function to
+an actual callable function.
+\end{operator}
+
+\begin{operator}{Begin String}{“}
+\item.
+\end{operator}
+
+\begin{operator}{End String}{”}
+\item.
+\end{operator}
+
+\begin{operator}{Flatten}{⋯}
+\item.
+\end{operator}
+
+\begin{operator}{Expand}{⋮}
+\item.
+\end{operator}
+
+\begin{operator}{Ascending}{⋰}
+    \op{list}{list}: Sorts the list in ascending order.
+\end{operator}
+
+\begin{operator}{Descending}{⋱}
+    \op{list}{list}: Sorts the list in descending order.
+\end{operator}
+
+\begin{operator}{Graph}{⁜}
+\item.
+\end{operator}
+
+\begin{operator}{One}{Ⅰ}
+\item.
+\end{operator}
+
+\begin{operator}{Two}{Ⅱ}
+\item.
+\end{operator}
+
+\begin{operator}{Three}{Ⅲ}
+\item.
+\end{operator}
+
+\begin{operator}{Four}{Ⅳ}
+\item.
+\end{operator}
+
+\begin{operator}{Five}{Ⅴ}
+\item.
+\end{operator}
+
+\begin{operator}{Six}{Ⅵ}
+\item.
+\end{operator}
+
+\begin{operator}{Seven}{Ⅶ}
+\item.
+\end{operator}
+
+\begin{operator}{Eight}{Ⅷ}
+\item.
+\end{operator}
+
+\begin{operator}{Nine}{Ⅸ}
+\item.
+\end{operator}
+
+\begin{operator}{Ten}{Ⅹ}
+\item.
+\end{operator}
+
+\begin{operator}{Eleven}{Ⅺ}
+\item.
+\end{operator}
+
+\begin{operator}{Twelve}{Ⅻ}
+\item.
+\end{operator}
+
+\begin{operator}{Fifty}{Ⅼ}
+\item.
+\end{operator}
+
+\begin{operator}{Hundred}{Ⅽ}
+\item.
+\end{operator}
+
+\begin{operator}{Five Hundred}{Ⅾ}
+\item.
+\end{operator}
+
+\begin{operator}{Thousand}{Ⅿ}
+\item.
+\end{operator}
+
+\begin{operator}{Alpha}{ɑ}
+\item.
+\end{operator}
+
+\begin{operator}{Beta}{β}
+\item.
+\end{operator}
+
+\begin{operator}{Five Thousand}{ↁ}
+\item.
+\end{operator}
+
+\begin{operator}{Ten Thousand}{ↂ}
+\item.
+\end{operator}
+
+\begin{operator}{Fifty Thousand}{ↇ}
+\item.
+\end{operator}
+
+\begin{operator}{Hundred Thousand}{ↈ}
+\item.
+\end{operator}
+
+\begin{operator}{Pop}{↤}
+\item.
+\end{operator}
+
+\begin{operator}{Push}{⇤}
+\item.
+\end{operator}
+
+\begin{operator}{Delta}{δ}
+\item.
+\end{operator}
+
+\begin{operator}{Gamma}{Γ}
+\item.
+\end{operator}
+
+\begin{operator}{Theta}{Θ}
+\item.
+\end{operator}
+
+\begin{operator}{Lambda}{Λ}
+\item.
+\end{operator}
+
+\begin{operator}{Xi}{Ξ}
+\item.
+\end{operator}
+
+\begin{operator}{Phi}{Φ}
+\item.
+\end{operator}
+
+\begin{operator}{Psi}{Ψ}
+\item.
+\end{operator}
+
+\begin{operator}{Omega}{Ω}
+\item.
+\end{operator}
+
+\begin{operator}{Complex}{ℂ}
+\item.
+\end{operator}
+
+\begin{operator}{Quaternion}{ℍ}
+\item.
+\end{operator}
+
+\begin{operator}{Natural}{ℕ}
+\item.
+\end{operator}
+
+\begin{operator}{Prime}{ℙ}
+\op{natural}{bool}: Check if the number is prime.
+\end{operator}
+
+\begin{operator}{Rational}{ℚ}
+\item.
+\end{operator}
+
+\begin{operator}{Real}{ℝ}
+\item.
+\end{operator}
+
+\begin{operator}{Integer}{ℤ}
+\item.
+\end{operator}
+
+\begin{operator}{Pi}{π}
+\item.
+\end{operator}
+
+\begin{operator}{Euler}{ℯ}
+\item.
+\end{operator}
+
+\begin{operator}{Aleph}{א}
+\item.
+\end{operator}
+
+\begin{operator}{Prescribe}{℞}
+\item.
+\end{operator}
+
+\begin{operator}{Oplus}{⊕}
+\item.
+\end{operator}
+
+\begin{operator}{Ominus}{⊖}
+\item.
+\end{operator}
+
+\begin{operator}{Otimes}{⊗}
+\item.
+\end{operator}
+
+\begin{operator}{Odivide}{⊘}
+\item.
+\end{operator}
+
+\begin{operator}{Oequals}{⊜}
+\item.
+\end{operator}
+
+\section{Examples}
+
+\
+
+\end{document}
